@@ -1,6 +1,6 @@
-//Affichage bienvenue
+//Message for user Welcome
 alert("Bonjour, bienvenue sur mon site de Chifoumi!");
-//invite user a saisir son nom
+//enter name
 var user = prompt("Avant de commencer à jouer, faisons les présentations... je suis Computer et toi? ");
 
 //ready to play
@@ -11,15 +11,17 @@ alert("Super " + user + ", es-tu prêt à jouer ?");
         alert("Super utilisateur, es-tu prêt à jouer?");
     }
 
-//choix user
+//choice user
 var choiceUser = prompt("Je te laisse choisir en premier... Pierre, Feuille ou Ciseaux?");
 
+//choices possible
 var choices = [
     "Pierre",
     "Feuille",
     "Ciseaux",
 ];
 
+//computer choice on array choices
 var choiceComputer = Math.random();
 
 if(choiceComputer <= 0.33){
@@ -32,8 +34,10 @@ else{
     choiceComputer = choices[2];
 }    
 
+//show choice computer
 alert("Moi j'ai choisi : " + choiceComputer);
 
+//compare choices and show the result
 if(choiceUser === choiceComputer){
     alert("Match nul!");
 }
@@ -42,11 +46,11 @@ if(choiceUser === choiceComputer){
     choiceUser === "Ciseaux" && choiceComputer === "Feuille"){
         alert(user + " à gagné la partie!");
     }
-    
+
 else{
     alert("Computer à gagné la partie!");
 }
             
-
+//final 
 alert("Merci d'avoir joué avec moi! A bientôt");
 
