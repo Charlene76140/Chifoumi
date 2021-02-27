@@ -3,7 +3,6 @@
 Chifoumi est un jeu bien connu des petits et des grands qui consiste à choisir en même temps entre "pierre, feuille ou ciseaux" 
 en sachant que la pierre bat les ciseaux, les ciseaux battend la feuille et enfin que la feuille bat la pierre.
 
-Essayez vous même c'est par ici : "lien vers la git page".
 
 ## Pourquoi ce projet? :
 
