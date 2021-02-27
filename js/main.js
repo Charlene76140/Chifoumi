@@ -12,13 +12,13 @@ alert("Super " + user + ", es-tu prêt à jouer ?");
     }
 
 //choice user
-var choiceUser = prompt("Je te laisse choisir en premier... Pierre, Feuille ou Ciseaux?");
+var choiceUser = prompt("Je te laisse choisir en premier... pierre, feuille ou ciseaux?");
 
 //choices possible
 var choices = [
-    "Pierre",
-    "Feuille",
-    "Ciseaux",
+    "pierre",
+    "feuille",
+    "ciseaux",
 ];
 
 //computer choice on array choices
@@ -41,9 +41,9 @@ alert("Moi j'ai choisi : " + choiceComputer);
 if(choiceUser === choiceComputer){
     alert("Match nul!");
 }
-    else if(choiceUser === "Pierre" && choiceComputer === "Ciseaux" ||
-    choiceUser ==="Feuille" && choiceComputer === "Pierre" ||
-    choiceUser === "Ciseaux" && choiceComputer === "Feuille"){
+    else if(choiceUser === "pierre" && choiceComputer === "ciseaux" ||
+    choiceUser ==="feuille" && choiceComputer === "pierre" ||
+    choiceUser === "ciseaux" && choiceComputer === "feuille"){
         alert(user + " à gagné la partie!");
     }
 
