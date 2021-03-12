@@ -1,58 +1,105 @@
-//Message for user Welcome
-alert("Bonjour, bienvenue sur mon site de Chifoumi!");
-//enter name
-var user = prompt("Avant de commencer à jouer, faisons les présentations... je suis Computer et toi? ");
+//--------------------------------------------------Variables gloables---------------------------------------------
 
-//ready to play
-if(user){
-alert("Super " + user + ", es-tu prêt à jouer ?");
-}
-    else{
-        alert("Super utilisateur, es-tu prêt à jouer?");
-    }
-
-//choice user
-var choiceUser = prompt("Je te laisse choisir en premier... Pierre, Feuille ou Ciseaux?");
-
-//choices possible
-var choices = [
-    "Pierre",
-    "Feuille",
-    "Ciseaux",
+//choix possible pour le PC et l'utilisateur
+let choices = [
+    "pierre",
+    "feuille",
+    "ciseaux",
 ];
 
-//computer choice on array choices
-var choiceComputer = Math.random();
+let pointsUser = 0;
+let pointsComputer = 0;
 
-if(choiceComputer <= 0.33){
-    choiceComputer = choices[0];
-}
-    else if (choiceComputer <= 0.67){
-        choiceComputer = choices[1];
+//----------------------------------------------------Mes fonctions--------------------------------------------------
+
+//1 - Fonction permettant de faire un choix aléatoire dans le tableau des choix pour le PC
+function getComputerChoice(){
+    let random = Math.floor(Math.random() * Math.floor(choices.length));
+    return choices[random];
+};
+
+
+
+
+
+//2 - Fonction permettant de récupérer le nom du joueur
+function getNameUser(){
+    //recupération du nom du joueuru
+    let name = prompt("Avant de commencer à jouer, faisons les présentations... je suis Computer et toi? ");
+    //tant que le nom n'a pas entre 2 et 20 caractère boucle
+    while(name.length < 2 || name.length > 20){
+        name = prompt("Votre nom doit comporter en 2 et 20 caractères");
+    };
+        
+    return name;
+};
+
+
+
+//3 - Fonction permettant de récupérer le choix de l'utilisateur
+
+function getUserChoice(){
+    do {
+        var choiceUsr = prompt("Je te laisse choisir en premier...\n" + choices.join()).toLowerCase();
     }
-else{
-    choiceComputer = choices[2];
-}    
+    while(!choices.includes(choiceUsr));
+    return choiceUsr;
+};
 
-//show choice computer
-alert("Moi j'ai choisi : " + choiceComputer);
 
-//compare choices and show the result
-if(choiceUser === choiceComputer){
-    alert("Match nul!");
-}
-    else if(choiceUser === "Pierre" && choiceComputer === "Ciseaux" ||
-    choiceUser ==="Feuille" && choiceComputer === "Pierre" ||
-    choiceUser === "Ciseaux" && choiceComputer === "Feuille"){
-        alert(user + " à gagné la partie!");
+
+//4 - Fonction permettant de comparer le choix du joueur et celui du PC
+function compareResult(){
+    if(choiceUser === choiceComputer){
+        console.log("Match nul!");
     }
+        else if(choiceUser === "pierre" && choiceComputer === "ciseaux" ||
+        choiceUser ==="feuille" && choiceComputer === "pierre" ||
+        choiceUser === "ciseaux" && choiceComputer === "feuille"){
+            console.log(userName + " à gagné la manche!") 
+            pointsUser += 1;
+        }
+    
+    else{
+        console.log("Computer à gagné la partie!");
+        pointsComputer += 1;
+    }
+};
 
-else{
-    alert("Computer à gagné la partie!");
+
+
+//---------------------------------------------- Mon code --------------------------------------------------------------------------
+
+//Message de bienvenue à l'utilisateur 
+console.log("Bonjour, bienvenue sur mon site de Chifoumi!");
+let userName = getNameUser();
+console.log(userName);
+
+
+while(pointsUser < 3 && pointsComputer < 3){
+    let choiceComputer = getComputerChoice();
+    console.log(choiceComputer);
+    var choiceUser = getUserChoice();
+    console.log(choiceUser);
+    //show choice computer
+    console.log("Moi j'ai choisi : " + choiceComputer);
+    compareResult();
+    console.log(pointsUser);
+    console.log(pointsComputer);
 }
-            
-//final 
-alert("Merci d'avoir joué avec moi! A bientôt");
 
 
-// je fais un test 
+
+
+
+
+
+
+
+
+
+
+
+
+// //final 
+// console.log("Merci d'avoir joué avec moi! A bientôt");
