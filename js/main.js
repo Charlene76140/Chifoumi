@@ -110,22 +110,3 @@ let userName = getNameUser();
 
 //fonction jouer
 play();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //final 
-// console.log("Merci d'avoir joué avec moi! A bientôt");
