@@ -20,8 +20,6 @@ function getComputerChoice(){
 
 
 
-
-
 //2 - Fonction permettant de récupérer le nom du joueur
 function getNameUser(){
     //recupération du nom du joueuru
@@ -61,10 +59,13 @@ function compareResult(){
         }
     
     else{
-        console.log("Computer à gagné la partie!");
+        console.log("Computer à gagné la manche!");
         pointsComputer += 1;
     }
 };
+
+
+//5 - Fonction rejouer
 
 
 
@@ -75,17 +76,26 @@ console.log("Bonjour, bienvenue sur mon site de Chifoumi!");
 let userName = getNameUser();
 console.log(userName);
 
-
 while(pointsUser < 3 && pointsComputer < 3){
-    let choiceComputer = getComputerChoice();
+
+    choiceComputer = getComputerChoice();
     console.log(choiceComputer);
-    var choiceUser = getUserChoice();
+
+    choiceUser = getUserChoice();
     console.log(choiceUser);
-    //show choice computer
-    console.log("Moi j'ai choisi : " + choiceComputer);
+
+    // console.log("Moi j'ai choisi : " + choiceComputer);
+    
     compareResult();
-    console.log(pointsUser);
-    console.log(pointsComputer);
+
+    console.log("Points "+ userName + " : "+ pointsUser + "\nPoints Computer : " + pointsComputer);  
+};
+
+if(pointsUser === 3){
+    console.log("Bravo vous avez gagné la partie!")
+}
+else{
+    console.log("Désolé, mais c'est Computer qui a gagné la partie")
 }
 
 
