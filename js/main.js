@@ -46,7 +46,7 @@ function getUserChoice(){
 function compareResult(){
     alert("Computer a choisi : " + choiceComputer);
         if(choiceUser === choiceComputer){
-            alert("Match nul! \n"+ userName + " : "+ pointsUser + "\nPoints Computer : " + pointsComputer);
+            alert("Match nul! \n"+ userName + " : "+ pointsUser + "\nComputer : " + pointsComputer);
 
         }
         else if(choiceUser === "pierre" && choiceComputer === "ciseaux" ||
@@ -87,10 +87,14 @@ function play(){
 
 //6 - Fonction rejouer
 function replay(){
-    let userReplay = prompt("Vous souhaitez rejouer? \n(oui ou non)")
+    do{
+        var userReplay = prompt("Vous souhaitez rejouer? \n(oui ou non)").toLowerCase();
+    }
+    while(!["oui","non"].includes(userReplay));
+    
     if(userReplay === "oui"){
-        pointsUser = 0;
-        pointsComputer = 0;
+    pointsUser = 0;
+    pointsComputer = 0;
        play();
     }
     else{
