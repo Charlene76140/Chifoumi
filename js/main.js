@@ -46,7 +46,7 @@ function getUserChoice(){
 function compareResult(){
     alert("Computer a choisi : " + choiceComputer);
         if(choiceUser === choiceComputer){
-            alert("Match nul! \n"+ userName + " : "+ pointsUser + "\nComputer : " + pointsComputer);
+            alert("Match nul! \n"+ userName + " : "+ pointsUser + "\nComputer : " + pointsComputer)
 
         }
         else if(choiceUser === "pierre" && choiceComputer === "ciseaux" ||
@@ -102,8 +102,7 @@ function replay(){
     }
 };   
 
-//---------------------------------------------- Mon code --------------------------------------------------------------------------
-
+//---------------------------------------------- Mon code -------------------------------------------------------------------------
 //Message de bienvenue à l'utilisateur 
 alert("Bonjour, bienvenue sur mon site de Chifoumi!");
 let userName = getNameUser();
